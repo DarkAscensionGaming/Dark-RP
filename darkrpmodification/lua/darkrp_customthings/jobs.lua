@@ -267,7 +267,7 @@ TEAM_NG = AddExtraTeam("National Guard", {
 	your job is to protect the citizen from terrorist...
 	If its allot of Terrorists in the city the Lieutenant Colonel of the
 	National Guard is in charge over all Law Enforcement in the city.]],
-    weapons = {"weaponchecker", "weapon_mad_m4", "weapon_fists", "weapon_mad_p228"},
+    weapons = {"weaponchecker", "m9k_tar21", "weapon_mad_m4", "weapon_fists", "weapon_mad_p228"},
     command = "ng",
     max = 5,
     salary = 150,
@@ -282,9 +282,9 @@ TEAM_NGLT = AddExtraTeam("National Guard Lieutenant Colonel", {
     description = [[As the Lieutenant Colonel in the
 	National Guard its your job to be in charge of all Law Enforcement
 	when its allot of terrorists or attacks in the city.]],
-    weapons = {"weaponchecker", "weapon_mad_m4", "weapon_fists", "weapon_mad_p228"},
+    weapons = {"weaponchecker", "m9k_tar21", "weapon_mad_m4", "weapon_fists", "weapon_mad_p228"},
     command = "nglt",
-    max = 5,
+    max = 1,
     salary = 230,
     admin = 0,
     vote = false,
