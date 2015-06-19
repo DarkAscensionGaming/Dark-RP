@@ -119,7 +119,7 @@ TEAM_TERRORIST = DarkRP.createJob("Terrorist", {
     color = Color(100, 20, 20, 255),
     model = "models/player/kuma/taliban_bomber.mdl",
     description = [[You are responsible for causeing terror to the civililians without RDM]],
-    weapons = {"weapon_fists", "m9k_deagle"},
+    weapons = {"weapon_fists", "m9k_machete", "m9k_deagle"},
     command = "terrorist",
     max = 10,
     salary = 65,
@@ -276,7 +276,7 @@ TEAM_NG = AddExtraTeam("National Guard", {
     hasLicense = true
 })
 
-TEAM_NGLT = AddExtraTeam("National Guard Lieutenant Colonel", {
+TEAM_NGLT = AddExtraTeam(" National Guard Colonel", {
     color = Color(10, 10, 150, 255),
     model = "models/player/gasmask.mdl",
     description = [[As the Lieutenant Colonel in the
