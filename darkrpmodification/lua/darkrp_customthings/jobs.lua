@@ -319,9 +319,25 @@ TEAM_ADMINONDUTY = DarkRP.createJob("Admin On Duty", {
 	admin = 0,
 	hasLicense = true,
 	customCheck = function(ply) return 
-   table.HasValue({"admin", "headadmin", "superadmin",  "owner"}, ply:GetNWString("usergroup"))
+   table.HasValue({"admin", "headadmin", "superadmin",  "owner", "admin+"}, ply:GetNWString("usergroup"))
 end,
 CustomCheckFailMsg = "This Job is Admin Only",
+})
+
+TEAM_MODONDUTY = DarkRP.createJob("Moderator On Duty", {
+	color = Color(150, 20, 20, 255),
+	model = "models/player/combine_super_soldier.mdl",
+	description = [[You are moderator. ]],
+	weapons = {"weapon_fists"},
+	command = "modduty",
+	max = 4,
+	salary = GAMEMODE.Config.normalsalary * 1.45,
+	admin = 0,
+	hasLicense = true,
+	customCheck = function(ply) return 
+   table.HasValue({"moderator", "moderator+"}, ply:GetNWString("usergroup"))
+end,
+CustomCheckFailMsg = "This Job is Moderator Only",
 })
 
 --[[---------------------------------------------------------------------------
@@ -339,7 +355,7 @@ TEAM_ADVANCEDTHIEF = DarkRP.createJob("Advanced Thief", {
 	admin = 0,
 	hasLicense = false,
 	customCheck = function(ply) return CLIENT or
-   table.HasValue({"vip", "superadmin", "headadmin", "owner"}, ply:GetNWString("usergroup"))
+   table.HasValue({"vip", "superadmin", "headadmin", "owner", "moderator+", "admin+", "operator+"}, ply:GetNWString("usergroup"))
 end,
 CustomCheckFailMsg = "This Job is VIP Only",
 })
@@ -355,7 +371,7 @@ TEAM_SECRETAGENT = DarkRP.createJob("Secret Agent", {
 	admin = 0,	
 	hasLicense = true,
 	customCheck = function(ply) return CLIENT or
-   table.HasValue({"vip", "superadmin", "headadmin", "owner"}, ply:GetNWString("usergroup"))
+   table.HasValue({"vip", "superadmin", "headadmin", "owner", "moderator+", "admin+", "operator+"}, ply:GetNWString("usergroup"))
 end,
 CustomCheckFailMsg = "This Job is VIP Only",
 	PlayerLoadout = function(ply) ply:SetArmor(100) end,
@@ -372,7 +388,7 @@ TEAM_SWAT = DarkRP.createJob("Swat", {
 	admin = 0,
 	hasLicense = true,
 	customCheck = function(ply) return CLIENT or
-   table.HasValue({"vip", "superadmin", "headadmin", "owner"}, ply:GetNWString("usergroup"))
+   table.HasValue({"vip", "superadmin", "headadmin", "owner", "moderator+", "admin+", "operator+"}, ply:GetNWString("usergroup"))
 end,
 CustomCheckFailMsg = "This Job is VIP Only",
 	PlayerLoadout = function(ply) ply:SetArmor(100) end,
@@ -389,7 +405,7 @@ TEAM_SWATLEADER = DarkRP.createJob("Swat Leader", {
 	admin = 0,
 	hasLicense = true,
 	customCheck = function(ply) return CLIENT or
-   table.HasValue({"vip", "superadmin", "headadmin", "owner"}, ply:GetNWString("usergroup"))
+   table.HasValue({"vip", "superadmin", "headadmin", "owner", "moderator+", "admin+", "operator+"}, ply:GetNWString("usergroup"))
 end,
 CustomCheckFailMsg = "This Job is VIP Only",
 	PlayerLoadout = function(ply) ply:SetArmor(100) end,
@@ -406,7 +422,7 @@ TEAM_CHEMDEALER = DarkRP.createJob("Chem dealer", {
 	admin = 0,
 	hasLicense = true,
 	customCheck = function(ply) return CLIENT or
-   table.HasValue({"vip", "superadmin", "headadmin", "owner"}, ply:GetNWString("usergroup"))
+   table.HasValue({"vip", "superadmin", "headadmin", "owner", "moderator+", "admin+", "operator+"}, ply:GetNWString("usergroup"))
 end,
 CustomCheckFailMsg = "This Job is VIP Only",
 })
@@ -422,7 +438,7 @@ TEAM_CIA = DarkRP.createJob("C.I.A", {
 	admin = 0,
 	hasLicense = true,
 	customCheck = function(ply) return CLIENT or
-   table.HasValue({"vip", "superadmin", "headadmin", "owner"}, ply:GetNWString("usergroup"))
+   table.HasValue({"vip", "superadmin", "headadmin", "owner", "moderator+", "admin+", "operator+"}, ply:GetNWString("usergroup"))
 end,
 CustomCheckFailMsg = "This Job is VIP Only",
 })
@@ -441,7 +457,7 @@ TEAM_NINJA = AddExtraTeam("Ninja", {
 	vote = false,
 	hasLicense = false,
 		customCheck = function(ply) return CLIENT or
-   table.HasValue({"vip", "superadmin", "headadmin", "owner"}, ply:GetNWString("usergroup"))
+   table.HasValue({"vip", "superadmin", "headadmin", "owner", "moderator+", "admin+", "operator+", "admin+", "operator+"}, ply:GetNWString("usergroup"))
 end,
 CustomCheckFailMsg = "This Job is VIP Only",
 })
