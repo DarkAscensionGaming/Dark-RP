@@ -88,17 +88,15 @@ TEAM_MAYOR = DarkRP.createJob("Mayor", {
 	hasLicense = false,
 	mayor = true,
 	category = "Civil Protection",
-        function MayorDemote( victim, weapon, killer )
-    if victim:Team() == (TEAM_MAYOR) && killer:IsPlayer( ) then
-
-        victim:SetTeam() == (TEAM_CITIZEN)
-            victim:ChatPrint("You died and you are now a regular citizen")
-                for k, v in pairs (player.GetAll()) do
-            v:PrintMessage( HUD_PRINTCENTER, "The mayor has died!" )
-        end
-    end
-end
-hook.Add( "PlayerDeath", "mayorDemote", MayorDemote )
+PlayerDeath = function(ply, weapon, killer)
+		ply:teamBan()
+		ply:changeTeam(GAMEMODE.DefaultTeam, true)
+		if killer:IsPlayer() then
+			DarkRP.notifyAll(0, 4, "The mayor has been killed and is therefor demoted.")
+		else
+			DarkRP.notifyAll(0, 4, "The mayor has died and is therefor demoted.")
+		end
+	end
 })
 
 TEAM_HITMAN = DarkRP.createJob("Hitman", {
