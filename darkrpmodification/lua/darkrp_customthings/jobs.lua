@@ -162,6 +162,15 @@ TEAM_MAYOR = DarkRP.createJob("Mayor", {
 	hasLicense = false,
 	mayor = true,
 	category = "Civil Protection",
+PlayerDeath = function(ply, weapon, killer)
+		ply:teamBan()
+		ply:changeTeam(GAMEMODE.DefaultTeam, true)
+		if killer:IsPlayer() then
+			DarkRP.notifyAll(0, 4, "The mayor has been killed and is therefor demoted.")
+		else
+			DarkRP.notifyAll(0, 4, "The mayor has died and is therefor demoted.")
+		end
+	end
 })
 
 TEAM_FBI = AddExtraTeam("F.B.I", {
@@ -425,7 +434,11 @@ TEAM_SWAT = DarkRP.createJob("Swat", {
 	color = Color(150, 20, 20, 255),
 	model = "models/player/swa2.mdl",
 	description = [[You are part of the swat team, your goal is to kill the bad guys.]],
+<<<<<<< HEAD
 	weapons = {"m9k_m416", "weapon_fists", "weapon_cuff_police"},
+=======
+	weapons = {"m9k_m416", "weapon_fists", "door_ram"},
+>>>>>>> origin/master
 	command = "swat",
 	max = 4,
 	salary = GAMEMODE.Config.normalsalary * 1.45,
@@ -442,7 +455,11 @@ TEAM_SWATLEADER = DarkRP.createJob("Swat Leader", {
 	color = Color(150, 20, 20, 255),
 	model = "models/player/gasmask.mdl",
 	description = [[You are the leader of the swat team, you tell your crew where to go and how to get things done. You're in charge]],
+<<<<<<< HEAD
 	weapons = {"m9k_g36", "weapon_fists", "weapon_medkit", "weapon_cuff_police"},
+=======
+	weapons = {"m9k_g36", "weapon_fists", "weapon_medkit", "door_ram"},
+>>>>>>> origin/master
 	command = "swatleader",
 	max = 4,
 	salary = GAMEMODE.Config.normalsalary * 1.45,
