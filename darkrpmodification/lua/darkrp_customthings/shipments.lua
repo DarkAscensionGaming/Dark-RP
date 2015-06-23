@@ -78,7 +78,8 @@ DarkRP.createShipment("IED Detonator", "models/weapons/w_c4.mdl", "m9k_ied_deton
 DarkRP.createShipment("Key Pad Cracker", "models/props_junk/cardboard_box001a.mdl", "prokeypadcracker", 100000, 10, false, nil, false, {TEAM_BLACKMARKETDEALER})
 DarkRP.createShipment("Unarrest Stick", "models/props_junk/cardboard_box001a.mdl", "unarrest_stick", 150000, 10, false, nil, false, {TEAM_BLACKMARKETDEALER})
 DarkRP.createShipment("Lock Pick", "models/props_junk/cardboard_box001a.mdl", "lockpick", 1000, 10, false, nil, false, {TEAM_BLACKMARKETDEALER})
-
+DarkRP.createShipment("Elastic", "models/props_c17/SuitCase001a.mdl", "weapon_cuff_elastic", 8000, 10, false, nil, false, {TEAM_BLACKMARKETDEALER})
+DarkRP.createShipment("Rope", "models/props_c17/SuitCase001a.mdl", "weapon_cuff_rope", 2000, 10, false, nil, false, {TEAM_BLACKMARKETDEALER})
 
 
 

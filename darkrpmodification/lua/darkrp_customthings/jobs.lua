@@ -22,110 +22,17 @@ Add jobs under the following line:
 Normal Jobs
 ---------------------------------------------------------------------------]]
 
-TEAM_POLICE = DarkRP.createJob("Civil Protection", {
-	color = Color(25, 25, 170, 255),
-	model = {"models/player/police.mdl", "models/player/police_fem.mdl"},
-	description = [[The protector of every citizen that lives in the city.
-		You have the power to arrest criminals and protect innocents.
-		Hit a player with your arrest baton to put them in jail.
-		Bash a player with a stunstick and they may learn to obey the law.
-		The Battering Ram can break down the door of a criminal, with a warrant for their arrest.
-		The Battering Ram can also unfreeze frozen props (if enabled).
-		Type /wanted <name> to alert the public to the presence of a criminal.]],
-	weapons = {"arrest_stick", "weapon_fists", "unarrest_stick", "weapon_glock2", "stunstick", "door_ram", "weaponchecker"},
-	command = "cp",
-	max = 4,
-	salary = GAMEMODE.Config.normalsalary * 1.45,
-	admin = 0,
-	vote = true,
-	hasLicense = true,
-	ammo = {
-		["pistol"] = 60,
-	},
-	category = "Civil Protection",
-})
-
-TEAM_CHIEF = DarkRP.createJob("Civil Protection Chief", {
-	color = Color(20, 20, 255, 255),
-	model = "models/player/combine_soldier_prisonguard.mdl",
-	description = [[The Chief is the leader of the Civil Protection unit.
-		Coordinate the police force to enforce law in the city.
-		Hit a player with arrest baton to put them in jail.
-		Bash a player with a stunstick and they may learn to obey the law.
-		The Battering Ram can break down the door of a criminal, with a warrant for his/her arrest.
-		Type /wanted <name> to alert the public to the presence of a criminal.]],
-	weapons = {"arrest_stick", "weapon_fists", "unarrest_stick", "weapon_deagle2", "stunstick", "door_ram", "weaponchecker"},
-	command = "chief",
+TEAM_PET = AddExtraTeam("Pet", {
+	color = Color(100, 150, 200, 255),
+	model = "models/player/hostage/hostage_04.mdl",
+	description = [[As a pet you are just an animal]],
+	weapons = {},
+	command = "pet",
 	max = 1,
-	salary = GAMEMODE.Config.normalsalary * 1.67,
+	salary = 5,
 	admin = 0,
 	vote = false,
-	hasLicense = true,
-	chief = true,
-	NeedToChangeFrom = TEAM_POLICE,
-	ammo = {
-		["pistol"] = 60,
-	},
-	category = "Civil Protection",
-})
-
-TEAM_MAYOR = DarkRP.createJob("Mayor", {
-	color = Color(150, 20, 20, 255),
-	model = "models/player/breen.mdl",
-	description = [[The Mayor of the city creates laws to govern the city.
-	If you are the mayor you may create and accept warrants.
-	Type /wanted <name>  to warrant a player.
-	Type /lockdown initiate a lockdown of the city.
-	Everyone must be inside during a lockdown.
-	The cops patrol the area.
-	/unlockdown to end a lockdown]],
-	weapons = {"weapon_fists"},
-	command = "mayor",
-	max = 1,
-	salary = GAMEMODE.Config.normalsalary * 1.89,
-	admin = 0,
-	vote = true,
-	hasLicense = false,
-	mayor = true,
-	category = "Civil Protection",
-})
-
-TEAM_HITMAN = DarkRP.createJob("Hitman", {
-	color = Color(150, 20, 20, 255),
-	model = "models/player/bobert/dseao.mdl",
-	description = [[Put hits on other people in the city ]],
-	weapons = {"lockpick", "weapon_fists", "unarrest_stick"},
-	command = "hitman",
-	max = 1,
-	salary = GAMEMODE.Config.normalsalary * 1.45,
-	admin = 0,
-	hasLicense = false,
-})
-
-
-TEAM_THIEF = DarkRP.createJob("Thief", {
-	color = Color(150, 20, 20, 255),
-	model = "models/player/phoenix.mdl",
-	description = [[You are a thief, do what thiefs do best.	Steal things! Rob Banks! Do whatever you need to get money.]],
-	weapons = {"lockpick", "weapon_fists", "keypad_cracker", "keypad_cracker"},
-	command = "thief",
-	max = 4,
-	salary = GAMEMODE.Config.normalsalary * 1.45,
-	admin = 0,
-	hasLicense = false,
-})
-
-TEAM_TERRORIST = DarkRP.createJob("Terrorist", {
-    color = Color(100, 20, 20, 255),
-    model = "models/player/kuma/taliban_bomber.mdl",
-    description = [[You are responsible for causeing terror to the civililians without RDM]],
-    weapons = {"weapon_fists", "m9k_machete", "m9k_deagle"},
-    command = "terrorist",
-    max = 10,
-    salary = 65,
-    admin = 0,
-    vote = true,
-    hasLicense = false,
+	hasLicense = false
 })
 
 TEAM_LAWYER = AddExtraTeam("Lawyer", {
@@ -182,6 +89,169 @@ TEAM_HOTEL = AddExtraTeam("Hotel manager", {
 	admin = 0,
 	vote = false,
 	hasLicense = false
+})
+
+
+--[[---------------------------------------------------------------------------
+Jobs that are lawful
+---------------------------------------------------------------------------]]
+
+TEAM_POLICE = DarkRP.createJob("Civil Protection", {
+	color = Color(25, 25, 170, 255),
+	model = {"models/player/police.mdl", "models/player/police_fem.mdl"},
+	description = [[The protector of every citizen that lives in the city.
+		You have the power to arrest criminals and protect innocents.
+		Hit a player with your arrest baton to put them in jail.
+		Bash a player with a stunstick and they may learn to obey the law.
+		The Battering Ram can break down the door of a criminal, with a warrant for their arrest.
+		The Battering Ram can also unfreeze frozen props (if enabled).
+		Type /wanted <name> to alert the public to the presence of a criminal.]],
+	weapons = {"arrest_stick", "weapon_cuff_police", "weapon_fists", "unarrest_stick", "weapon_glock2", "stunstick", "door_ram", "weaponchecker"},
+	command = "cp",
+	max = 4,
+	salary = GAMEMODE.Config.normalsalary * 1.45,
+	admin = 0,
+	vote = true,
+	hasLicense = true,
+	ammo = {
+		["pistol"] = 60,
+	},
+	category = "Civil Protection",
+})
+
+TEAM_CHIEF = DarkRP.createJob("Civil Protection Chief", {
+	color = Color(20, 20, 255, 255),
+	model = "models/player/combine_soldier_prisonguard.mdl",
+	description = [[The Chief is the leader of the Civil Protection unit.
+		Coordinate the police force to enforce law in the city.
+		Hit a player with arrest baton to put them in jail.
+		Bash a player with a stunstick and they may learn to obey the law.
+		The Battering Ram can break down the door of a criminal, with a warrant for his/her arrest.
+		Type /wanted <name> to alert the public to the presence of a criminal.]],
+	weapons = {"arrest_stick", "weapon_cuff_police", "weapon_fists", "unarrest_stick", "weapon_deagle2", "stunstick", "door_ram", "weaponchecker"},
+	command = "chief",
+	max = 1,
+	salary = GAMEMODE.Config.normalsalary * 1.67,
+	admin = 0,
+	vote = false,
+	hasLicense = true,
+	chief = true,
+	NeedToChangeFrom = TEAM_POLICE,
+	ammo = {
+		["pistol"] = 60,
+	},
+	category = "Civil Protection",
+})
+
+TEAM_MAYOR = DarkRP.createJob("Mayor", {
+	color = Color(150, 20, 20, 255),
+	model = "models/player/breen.mdl",
+	description = [[The Mayor of the city creates laws to govern the city.
+	If you are the mayor you may create and accept warrants.
+	Type /wanted <name>  to warrant a player.
+	Type /lockdown initiate a lockdown of the city.
+	Everyone must be inside during a lockdown.
+	The cops patrol the area.
+	/unlockdown to end a lockdown]],
+	weapons = {"weapon_fists"},
+	command = "mayor",
+	max = 1,
+	salary = GAMEMODE.Config.normalsalary * 1.89,
+	admin = 0,
+	vote = true,
+	hasLicense = false,
+	mayor = true,
+	category = "Civil Protection",
+})
+
+TEAM_FBI = AddExtraTeam("F.B.I", {
+	color = Color(50, 90, 255, 255),
+	model = {
+	"models/fbi_pack/fbi_01.mdl",
+	"models/fbi_pack/fbi_02.mdl",
+	"models/fbi_pack/fbi_03.mdl",
+	},
+	description = [[As a F.B.I Special Agent its your job to find
+	Terrorists and kill or arrest them..... ]],
+	weapons = {"arrest_stick", "weapon_cuff_police", "weapon_fists", "unarrest_stick", "m9k_mp5sd", "stunstick", "door_ram", "weaponchecker"},
+	command = "fbi",
+	max = 2,
+	salary = 120,
+	admin = 0,
+	vote = false,
+	hasLicense = false
+})
+
+TEAM_NG = AddExtraTeam("National Guard", {
+    color = Color(10, 10, 100, 255),
+    model = "models/player/gasmask.mdl",
+    description = [[As a member of the National Guard
+	your job is to protect the citizen from terrorist...
+	If its allot of Terrorists in the city the Lieutenant Colonel of the
+	National Guard is in charge over all Law Enforcement in the city.]],
+    weapons = {"weaponchecker", "weapon_cuff_police", "m9k_tar21", "weapon_mad_m4", "weapon_fists", "weapon_mad_p228"},
+    command = "ng",
+    max = 5,
+    salary = 150,
+    admin = 0,
+    vote = false,
+    hasLicense = true
+})
+
+TEAM_NGLT = AddExtraTeam("National Guard Colonel", {
+    color = Color(10, 10, 150, 255),
+    model = "models/player/gasmask.mdl",
+    description = [[As the Lieutenant Colonel in the
+	National Guard its your job to be in charge of all Law Enforcement
+	when its allot of terrorists or attacks in the city.]],
+    weapons = {"weaponchecker", "weapon_cuff_police", "m9k_tar21", "weapon_mad_m4", "weapon_fists", "weapon_mad_p228"},
+    command = "nglt",
+    max = 1,
+    salary = 230,
+    admin = 0,
+    vote = false,
+    hasLicense = true,
+})
+
+--[[---------------------------------------------------------------------------
+Jobs that are unlawful
+---------------------------------------------------------------------------]]
+TEAM_HITMAN = DarkRP.createJob("Hitman", {
+	color = Color(150, 20, 20, 255),
+	model = "models/player/bobert/dseao.mdl",
+	description = [[Put hits on other people in the city ]],
+	weapons = {"lockpick", "weapon_fists", "unarrest_stick"},
+	command = "hitman",
+	max = 1,
+	salary = GAMEMODE.Config.normalsalary * 1.45,
+	admin = 0,
+	hasLicense = false,
+})
+
+
+TEAM_THIEF = DarkRP.createJob("Thief", {
+	color = Color(150, 20, 20, 255),
+	model = "models/player/phoenix.mdl",
+	description = [[You are a thief, do what thiefs do best.	Steal things! Rob Banks! Do whatever you need to get money.]],
+	weapons = {"lockpick", "weapon_fists", "keypad_cracker", "keypad_cracker"},
+	command = "thief",
+	max = 4,
+	salary = GAMEMODE.Config.normalsalary * 1.45,
+	admin = 0,
+	hasLicense = false,
+})
+
+TEAM_TERRORIST = DarkRP.createJob("Terrorist", {
+    color = Color(100, 20, 20, 255),
+    model = "models/player/kuma/taliban_bomber.mdl",
+    description = [[You are responsible for causeing terror to the civililians without RDM]],
+    weapons = {"weapon_fists", "m9k_machete", "m9k_deagle"},
+    command = "terrorist",
+    max = 10,
+    salary = 65,
+    admin = 0,
+    vote = true,
+    hasLicense = false,
 })
 
 TEAM_DRUGCARTELBOSS = AddExtraTeam("Mexican Drug Cartel Boss", {
@@ -242,54 +312,6 @@ You take orders from the Italian mob boss only. ]],
 	hasLicense = false
 })
 
-TEAM_FBI = AddExtraTeam("F.B.I", {
-	color = Color(50, 90, 255, 255),
-	model = {
-	"models/fbi_pack/fbi_01.mdl",
-	"models/fbi_pack/fbi_02.mdl",
-	"models/fbi_pack/fbi_03.mdl",
-	},
-	description = [[As a F.B.I Special Agent its your job to find
-	Terrorists and kill or arrest them..... ]],
-	weapons = {"arrest_stick", "weapon_fists", "unarrest_stick", "m9k_mp5sd", "stunstick", "door_ram", "weaponchecker"},
-	command = "fbi",
-	max = 2,
-	salary = 120,
-	admin = 0,
-	vote = false,
-	hasLicense = false
-})
-
-TEAM_NG = AddExtraTeam("National Guard", {
-    color = Color(10, 10, 100, 255),
-    model = "models/player/gasmask.mdl",
-    description = [[As a member of the National Guard
-	your job is to protect the citizen from terrorist...
-	If its allot of Terrorists in the city the Lieutenant Colonel of the
-	National Guard is in charge over all Law Enforcement in the city.]],
-    weapons = {"weaponchecker", "m9k_tar21", "weapon_mad_m4", "weapon_fists", "weapon_mad_p228"},
-    command = "ng",
-    max = 5,
-    salary = 150,
-    admin = 0,
-    vote = false,
-    hasLicense = true
-})
-
-TEAM_NGLT = AddExtraTeam(" National Guard Colonel", {
-    color = Color(10, 10, 150, 255),
-    model = "models/player/gasmask.mdl",
-    description = [[As the Lieutenant Colonel in the
-	National Guard its your job to be in charge of all Law Enforcement
-	when its allot of terrorists or attacks in the city.]],
-    weapons = {"weaponchecker", "m9k_tar21", "weapon_mad_m4", "weapon_fists", "weapon_mad_p228"},
-    command = "nglt",
-    max = 1,
-    salary = 230,
-    admin = 0,
-    vote = false,
-    hasLicense = true,
-})
 
 TEAM_BLACKMARKETDEALER = AddExtraTeam("Black Market Dealer", {
     color = Color(10, 10, 150, 255),
@@ -325,76 +347,8 @@ CustomCheckFailMsg = "This Job is Admin Only",
 })
 
 --[[---------------------------------------------------------------------------
-Jobs that are vip
+JOBS THAT ARE V.I.P
 ---------------------------------------------------------------------------]]
-
-TEAM_ADVANCEDTHIEF = DarkRP.createJob("Advanced Thief", {
-	color = Color(150, 20, 20, 255),
-	model = "models/player/aiden_pearce.mdl",
-	description = [[Steal things but here's the twist, you have a faster lock pick and a starting gun. Steal things with ease.]],
-	weapons = {"pro_lockpick_update", "weapon_fists", "m9k_mp9", "prokeypadcracker"},
-	command = "advthief",
-	max = 4,
-	salary = GAMEMODE.Config.normalsalary * 1.45,
-	admin = 0,
-	hasLicense = false,
-	customCheck = function(ply) return CLIENT or
-   table.HasValue({"vip", "superadmin", "headadmin", "owner"}, ply:GetNWString("usergroup"))
-end,
-CustomCheckFailMsg = "This Job is VIP Only",
-})
-
-TEAM_SECRETAGENT = DarkRP.createJob("Secret Agent", {
-	color = Color(150, 20, 20, 255),
-	model = "models/player/leet.mdl",
-	description = [[Secret agent works for the police but does not arrest. He kills anyone who has a warrent on them or if he sees someone doing something wrong. Can not Raid.]],
-	weapons = {"m9k_svu", "weapon_fists", "m9k_m92beretta"},
-	command = "scretagent",
-	max = 4,
-	salary = GAMEMODE.Config.normalsalary * 1.45,
-	admin = 0,	
-	hasLicense = true,
-	customCheck = function(ply) return CLIENT or
-   table.HasValue({"vip", "superadmin", "headadmin", "owner"}, ply:GetNWString("usergroup"))
-end,
-CustomCheckFailMsg = "This Job is VIP Only",
-	PlayerLoadout = function(ply) ply:SetArmor(100) end,
-})
-
-TEAM_SWAT = DarkRP.createJob("Swat", {
-	color = Color(150, 20, 20, 255),
-	model = "models/player/swa2.mdl",
-	description = [[You are part of the swat team, your goal is to kill the bad guys.]],
-	weapons = {"m9k_m416", "weapon_fists"},
-	command = "swat",
-	max = 4,
-	salary = GAMEMODE.Config.normalsalary * 1.45,
-	admin = 0,
-	hasLicense = true,
-	customCheck = function(ply) return CLIENT or
-   table.HasValue({"vip", "superadmin", "headadmin", "owner"}, ply:GetNWString("usergroup"))
-end,
-CustomCheckFailMsg = "This Job is VIP Only",
-	PlayerLoadout = function(ply) ply:SetArmor(100) end,
-})
-
-TEAM_SWATLEADER = DarkRP.createJob("Swat Leader", {
-	color = Color(150, 20, 20, 255),
-	model = "models/player/gasmask.mdl",
-	description = [[You are the leader of the swat team, you tell your crew where to go and how to get things done. You're in charge]],
-	weapons = {"m9k_g36", "weapon_fists", "weapon_medkit"},
-	command = "swatleader",
-	max = 4,
-	salary = GAMEMODE.Config.normalsalary * 1.45,
-	admin = 0,
-	hasLicense = true,
-	customCheck = function(ply) return CLIENT or
-   table.HasValue({"vip", "superadmin", "headadmin", "owner"}, ply:GetNWString("usergroup"))
-end,
-CustomCheckFailMsg = "This Job is VIP Only",
-	PlayerLoadout = function(ply) ply:SetArmor(100) end,
-})
-
 TEAM_CHEMDEALER = DarkRP.createJob("Chem dealer", {
 	color = Color(150, 20, 20, 100),
 	model = "models/materials/humans/group03m/male_09.mdl",
@@ -406,23 +360,7 @@ TEAM_CHEMDEALER = DarkRP.createJob("Chem dealer", {
 	admin = 0,
 	hasLicense = true,
 	customCheck = function(ply) return CLIENT or
-   table.HasValue({"vip", "superadmin", "headadmin", "owner"}, ply:GetNWString("usergroup"))
-end,
-CustomCheckFailMsg = "This Job is VIP Only",
-})
-
-TEAM_CIA = DarkRP.createJob("C.I.A", {
-	color = Color(150, 20, 20, 100),
-	model = "models/player/fbi/fbi_04.mdl",
-	description = [[You're a member of the cia]],
-	weapons = {"m9k_mp5", "arrest_stick", "weapon_fists", "unarrest_stick", "stunstick", "door_ram", "weaponchecker"},
-	command = "cia",
-	max = 2,
-	salary = GAMEMODE.Config.normalsalary * 1.45,
-	admin = 0,
-	hasLicense = true,
-	customCheck = function(ply) return CLIENT or
-   table.HasValue({"vip", "superadmin", "headadmin", "owner"}, ply:GetNWString("usergroup"))
+   table.HasValue({"vip", "superadmin", "headadmin", "operator+", "moderator+", "admin+", "owner"}, ply:GetNWString("usergroup"))
 end,
 CustomCheckFailMsg = "This Job is VIP Only",
 })
@@ -441,10 +379,101 @@ TEAM_NINJA = AddExtraTeam("Ninja", {
 	vote = false,
 	hasLicense = false,
 		customCheck = function(ply) return CLIENT or
-   table.HasValue({"vip", "superadmin", "headadmin", "owner"}, ply:GetNWString("usergroup"))
+   table.HasValue({"vip", "superadmin", "headadmin", "operator+", "moderator+", "admin+", "owner"}, ply:GetNWString("usergroup"))
 end,
 CustomCheckFailMsg = "This Job is VIP Only",
 })
+--[[---------------------------------------------------------------------------
+Jobs that are unlawful
+---------------------------------------------------------------------------]]
+TEAM_ADVANCEDTHIEF = DarkRP.createJob("Advanced Thief", {
+	color = Color(150, 20, 20, 255),
+	model = "models/player/aiden_pearce.mdl",
+	description = [[Steal things but here's the twist, you have a faster lock pick and a starting gun. Steal things with ease.]],
+	weapons = {"pro_lockpick_update", "weapon_fists", "m9k_mp9", "prokeypadcracker"},
+	command = "advthief",
+	max = 4,
+	salary = GAMEMODE.Config.normalsalary * 1.45,
+	admin = 0,
+	hasLicense = false,
+	customCheck = function(ply) return CLIENT or
+   table.HasValue({"vip", "superadmin", "headadmin", "operator+", "moderator+", "admin+", "owner"}, ply:GetNWString("usergroup"))
+end,
+CustomCheckFailMsg = "This Job is VIP Only",
+})
+--[[---------------------------------------------------------------------------
+Jobs that are lawful
+---------------------------------------------------------------------------]]
+TEAM_SECRETAGENT = DarkRP.createJob("Secret Agent", {
+	color = Color(150, 20, 20, 255),
+	model = "models/player/leet.mdl",
+	description = [[Secret agent works for the police but does not arrest. He kills anyone who has a warrent on them or if he sees someone doing something wrong. Can not Raid.]],
+	weapons = {"m9k_svu", "weapon_fists", "m9k_m92beretta", "weapon_cuff_police"},
+	command = "scretagent",
+	max = 4,
+	salary = GAMEMODE.Config.normalsalary * 1.45,
+	admin = 0,	
+	hasLicense = true,
+	customCheck = function(ply) return CLIENT or
+   table.HasValue({"vip", "superadmin", "headadmin", "operator+", "moderator+", "admin+", "owner"}, ply:GetNWString("usergroup"))
+end,
+CustomCheckFailMsg = "This Job is VIP Only",
+	PlayerLoadout = function(ply) ply:SetArmor(100) end,
+})
+
+TEAM_SWAT = DarkRP.createJob("Swat", {
+	color = Color(150, 20, 20, 255),
+	model = "models/player/swa2.mdl",
+	description = [[You are part of the swat team, your goal is to kill the bad guys.]],
+	weapons = {"m9k_m416", "weapon_fists", "weapon_cuff_police"},
+	command = "swat",
+	max = 4,
+	salary = GAMEMODE.Config.normalsalary * 1.45,
+	admin = 0,
+	hasLicense = true,
+	customCheck = function(ply) return CLIENT or
+   table.HasValue({"vip", "superadmin", "headadmin", "operator+", "moderator+", "admin+", "owner"}, ply:GetNWString("usergroup"))
+end,
+CustomCheckFailMsg = "This Job is VIP Only",
+	PlayerLoadout = function(ply) ply:SetArmor(100) end,
+})
+
+TEAM_SWATLEADER = DarkRP.createJob("Swat Leader", {
+	color = Color(150, 20, 20, 255),
+	model = "models/player/gasmask.mdl",
+	description = [[You are the leader of the swat team, you tell your crew where to go and how to get things done. You're in charge]],
+	weapons = {"m9k_g36", "weapon_fists", "weapon_medkit", "weapon_cuff_police"},
+	command = "swatleader",
+	max = 4,
+	salary = GAMEMODE.Config.normalsalary * 1.45,
+	admin = 0,
+	hasLicense = true,
+	customCheck = function(ply) return CLIENT or
+   table.HasValue({"vip", "superadmin", "headadmin", "operator+", "moderator+", "admin+", "owner"}, ply:GetNWString("usergroup"))
+end,
+CustomCheckFailMsg = "This Job is VIP Only",
+	PlayerLoadout = function(ply) ply:SetArmor(100) end,
+})
+
+
+
+TEAM_CIA = DarkRP.createJob("C.I.A", {
+	color = Color(150, 20, 20, 100),
+	model = "models/player/fbi/fbi_04.mdl",
+	description = [[You're a member of the cia]],
+	weapons = {"m9k_mp5", "arrest_stick", "weapon_fists", "unarrest_stick", "weapon_cuff_police", "stunstick", "door_ram", "weaponchecker"},
+	command = "cia",
+	max = 2,
+	salary = GAMEMODE.Config.normalsalary * 1.45,
+	admin = 0,
+	hasLicense = true,
+	customCheck = function(ply) return CLIENT or
+   table.HasValue({"vip", "superadmin", "headadmin", "operator+", "moderator+", "admin+", "owner"}, ply:GetNWString("usergroup"))
+end,
+CustomCheckFailMsg = "This Job is VIP Only",
+})
+
+
 
 --[[---------------------------------------------------------------------------
 Custom Jobs
@@ -465,6 +494,14 @@ GAMEMODE.CivilProtection = {
 	[TEAM_POLICE] = true,
 	[TEAM_CHIEF] = true,
 	[TEAM_MAYOR] = true,
+	[TEAM_CIA] = true,
+	[TEAM_SWATLEADER] = true,
+	[TEAM_SWAT] = true,
+	[TEAM_SECRETAGENT] = true,
+	[TEAM_NGLT] = true,
+	[TEAM_NG] = true,
+	[TEAM_FBI] = true,
+	[TEAM_SECRETAGENT] = true,
 }
 
 --[[---------------------------------------------------------------------------
